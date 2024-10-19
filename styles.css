@@ -51,6 +51,11 @@ h1 {
 
 .scoreboard {
     margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .board {
@@ -58,7 +63,7 @@ h1 {
     grid-template-columns: repeat(3, 120px);
     grid-template-rows: repeat(3, 120px);
     gap: 10px;
-    margin: 0 auto; /* Center the board horizontally */
+    margin: 20px auto;
 }
 
 .cell {
@@ -154,13 +159,11 @@ h1 {
 #player1-score {
     color: red;
     font-weight: bold;
-    float: left;
 }
 
 #player2-score {
     color: blue;
     font-weight: bold;
-    float: right;
 }
 
 /* Button styling */
@@ -187,36 +190,76 @@ button {
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center-align items */
+    align-items: center;
     color: white;
 }
+
 .score {
     display: flex;
-    justify-content: space-between; /* Space out player scores */
-    width: 100%; /* Make it full width */
-    max-width: 300px; /* Limit the max width for better alignment */
-    margin: 0 auto; /* Center the score container */
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 #player1-score, #player2-score {
-    margin: 0 20px; /* Add margin between player scores */
-    font-size: 1.2rem; /* Adjust font size for better visibility */
+    margin: 0 20px;
+    font-size: 1.2rem;
 }
 
+/* Media Queries */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    #name-input input {
+        width: 80%; /* Make input fields full width on smaller screens */
+    }
 
-.board {
-    display: grid;
-    grid-template-columns: repeat(3, 120px);
-    grid-template-rows: repeat(3, 120px);
-    gap: 10px;
-    margin: 20px auto; /* Center the board horizontally and give margin */
+    #name-input button {
+        width: 80%; /* Make button full width */
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 80px); /* Smaller grid cells */
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .cell {
+        font-size: 2rem; /* Smaller font size for cells */
+    }
+
+    .score {
+        flex-direction: column; /* Stack scores vertically */
+        align-items: center; /* Center scores */
+        margin: 10px 0;
+    }
 }
 
-.scoreboard {
-    margin: 20px 0;
-    display: flex; /* Use flexbox for alignment */
-    justify-content: space-between; /* Space out the score display */
-    width: 100%; /* Make it full width */
-    max-width: 300px; /* Limit the max width for better alignment */
-}
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem; /* Smaller font size for very small screens */
+    }
 
+    #name-input input, #name-input button {
+        font-size: 0.9rem; /* Smaller font size for inputs and buttons */
+    }
+
+    .board {
+        grid-template-columns: repeat(3, 60px); /* Even smaller grid cells */
+        grid-template-rows: repeat(3, 60px);
+    }
+
+    .cell {
+        font-size: 1.5rem; /* Even smaller font size for cells */
+    }
+
+    .status {
+        font-size: 1rem; /* Smaller status text */
+    }
+
+    #player1-score, #player2-score {
+        font-size: 1rem; /* Adjust score font size */
+    }
+}
