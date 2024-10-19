@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe - XO Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="overlay hidden" id="overlay"></div>
+    <div class="popup hidden" id="popup">
+        <h2 id="winner-message"></h2>
+        <button class="popup-btn" id="replay-btn">Replay</button>
+        <button class="popup-btn" id="restart-btn">Restart</button>
+        <button class="popup-btn" id="exit-btn">Exit</button>
+    </div>
+    
+    <div class="container" id="game-container">
+        <h1>DEVLOPED BY HARIHARAN</h1>
+            <h1>Tic Tac Toe</h1>
+        <div id="name-input">
+            <input type="text" id="player1-name" placeholder="Enter Player 1 Name">
+            <input type="text" id="player2-name" placeholder="Enter Player 2 Name">
+            <button id="start-game-btn">Start Game</button>
+        </div>
+        <div class="scoreboard hidden">
+            <h2 id="score-display">Scores</h2>
+            <div class="score">
+                <p id="player1-score">Player 1: 0</p>
+                <p id="player2-score">Player 2: 0</p>
+            </div>
+        </div>
+        <div class="board hidden">
+            <div class="cell" data-index="0"></div>
+            <div class="cell" data-index="1"></div>
+            <div class="cell" data-index="2"></div>
+            <div class="cell" data-index="3"></div>
+            <div class="cell" data-index="4"></div>
+            <div class="cell" data-index="5"></div>
+            <div class="cell" data-index="6"></div>
+            <div class="cell" data-index="7"></div>
+            <div class="cell" data-index="8"></div>
+        </div>
+        <div class="status hidden"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
